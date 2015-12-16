@@ -31,7 +31,7 @@ func main() {
     a := T{"tt", "nn"}
     logCommons.SetLevel(logCommons.INFO)
     logCommons.SetFlag(logCommons.Lcolor | logCommons.Lfuncname | logCommons.Llevelname)
-    logCommons.Debug("6666")
+    logCommons.Debug("6666")//as level is INFO,debug would not be recorded
     logCommons.Info("6666")
     logCommons.SetFlags(logCommons.Ldate | logCommons.Ltime | logCommons.Lshortfile)
     logCommons.Warn(a)

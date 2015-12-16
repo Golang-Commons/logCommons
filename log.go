@@ -2,8 +2,19 @@ package logCommons
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"runtime"
+)
+
+const (
+	Ldate = 1 << iota
+	Ltime
+	Lmicroseconds
+	Llongfile
+	Lshortfile
+	LUTC
+	LstdFlags = Ldate | Ltime
 )
 
 const (
@@ -72,6 +83,14 @@ func SetFlag(flag int) {
 		Flevelname = 1
 	}
 
+}
+
+func SetFlags(flag int) {
+	log.SetFlags(flag)
+}
+
+func SetOutput(w io.Writer) {
+	log.SetOutput(w)
 }
 
 func println(level int, a ...interface{}) {

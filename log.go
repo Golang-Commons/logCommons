@@ -139,3 +139,7 @@ func Panic(a ...interface{}) {
 func Fatal(a ...interface{}) {
 	println(FATAL, a...)
 }
+
+func Println(a ...interface{}) {
+	log.Println(a...)
+}

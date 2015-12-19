@@ -113,7 +113,7 @@ func println(level int, a ...interface{}) {
 	} else if Fcolor == 1 {
 		str = fmt.Sprintf("\x1b[0;%dm%s\x1b[0m", levelArray[level], str)
 	}
-	log.Println(str)
+	log.Output(3, fmt.Sprintln(a...))
 }
 
 func Debug(a ...interface{}) {
@@ -141,5 +141,5 @@ func Fatal(a ...interface{}) {
 }
 
 func Println(a ...interface{}) {
-	log.Println(a...)
+	log.Output(2, fmt.Sprintln(a...))
 }
